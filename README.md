@@ -1,12 +1,33 @@
-# React + Vite
+# Vibbz 🎉
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A front-end social media app using React and Vite, powered by the Noroff Social API.
 
-Currently, two official plugins are available:
+## 🚀 Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+git clone https://github.com/piasun/project-exam-2-vibbz.git
+cd vibbz
+npm install
+npm run dev
 
-## Expanding the ESLint configuration
+🔐 Authentication
+Register and login using:
+Register: /social/auth/register
+Login: /social/auth/login
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🌐 Hosted URL
+(TBD)
+
+🔗 API URL
+https://nf-api.onrender.com/api/v1/social/
+
+🧪 Special Instructions for Testers
+Only users with @stud.noroff.no emails can register.
+
+✅ Features (User Stories)
+ Register
+
+ Login
+
+ Update avatar/banner
+```
