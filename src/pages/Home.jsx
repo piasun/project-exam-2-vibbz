@@ -26,12 +26,17 @@ export default function Home() {
   }, [user]);
 
   return (
-    <div className="container mt-4">
-      <h2>Latest Posts</h2>
-      {error && <div className="alert alert-danger">{error}</div>}
+  <div className="container mt-4">
+    <h2>Latest Posts</h2>
+    {error && <div className="alert alert-danger">{error}</div>}
+
+    <div className="row">
       {posts.map(post => (
-        <PostCard key={post.id} post={post} />
+        <div key={post.id} className="col-12 col-sm-6 col-lg-4 mb-4">
+          <PostCard post={post} />
+        </div>
       ))}
     </div>
-  );
+  </div>
+);
 }

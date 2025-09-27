@@ -22,24 +22,25 @@ export default function PostCard({ post }) {
       setReactionMsg('Failed to react');
     }
 
-    setTimeout(() => setReactionMsg(''), 2000); // fjerner melding etter 2 sek
+    setTimeout(() => setReactionMsg(''), 2000);
   };
 
   const emojis = ['👍', '❤️', '😂', '😮', '😢'];
 
   return (
-    <div className="card mb-4">
-      <div className="card-body">
-        <h5 className="card-title">{post.title}</h5>
-        <p className="card-text">{post.body}</p>
+    <div className="card h-100 shadow-sm">
+      {post.media && (
+        <img
+          src={post.media}
+          alt={post.title}
+          className="card-img-top"
+          style={{ height: '200px', objectFit: 'cover' }}
+        />
+      )}
 
-        {post.media && (
-          <img
-            src={post.media}
-            alt={post.title}
-            className="img-fluid rounded mb-3"
-          />
-        )}
+      <div className="card-body d-flex flex-column">
+        <h5 className="card-title">{post.title}</h5>
+        <p className="card-text text-truncate">{post.body}</p>
 
         <p className="text-muted small">
           Author: <strong>{post.author?.name}</strong>
