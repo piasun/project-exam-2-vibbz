@@ -1,4 +1,26 @@
 body {
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
+  background-color: #f4f8fb;
+  font-family: "Poppins", sans-serif;
+  color: #2c3e50;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-success {
+  background-color: #2ecc71;
+  border-color: #2ecc71;
+}
+
+.btn-danger {
+  background-color: #ff6b6b;
+  border-color: #ff6b6b;
 }
