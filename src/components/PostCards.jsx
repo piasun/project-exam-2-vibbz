@@ -29,14 +29,22 @@ export default function PostCard({ post }) {
 
   return (
     <div className="card h-100 shadow-sm">
-      {post.media && (
-        <img
-          src={post.media}
-          alt={post.title}
-          className="card-img-top"
-          style={{ height: '200px', objectFit: 'cover' }}
-        />
-      )}
+      {post.media ? (
+  <img
+    src={post.media}
+    alt={post.title}
+    className="card-img-top"
+    style={{ height: '200px', objectFit: 'cover' }}
+  />
+) : (
+  <div
+    className="d-flex align-items-center justify-content-center bg-light text-muted"
+    style={{ height: '200px', fontSize: '0.9rem', border: '1px dashed #ccc' }}
+  >
+    No image added
+  </div>
+)}
+
 
       <div className="card-body d-flex flex-column">
         <h5 className="card-title">{post.title}</h5>
