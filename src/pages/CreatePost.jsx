@@ -33,6 +33,33 @@ export default function CreatePost() {
         <input className="form-control mb-2" placeholder="Media URL" value={media} onChange={e => setMedia(e.target.value)} />
         <button className="btn btn-success">Post</button>
       </form>
+      {(title || body || media) && (
+        <>
+          <h5 className="mt-5">Preview</h5>
+          <div className="card h-100 shadow-sm mt-3">
+            {media && (
+              <img
+                src={media}
+                alt="Preview"
+                className="card-img-top"
+                style={{ height: '200px', objectFit: 'cover' }}
+              />
+            )}
+            <div className="card-body">
+              <h5 className="card-title">{title || 'Untitled Post'}</h5>
+              <p className="card-text text-truncate">
+                {body || 'Post content will appear here...'}
+              </p>
+              <p className="text-muted small">
+                Author: <strong>{user.name}</strong>
+              </p>
+              <button className="btn btn-outline-secondary btn-sm" disabled>
+                View Post
+              </button>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }
