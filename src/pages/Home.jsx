@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { api } from '../utils/api';
 import { useAuth } from '../features/auth/AuthContext';
 import PostCard from '../components/PostCards';
+import LandingPage from './LandingPage';
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -11,12 +12,14 @@ export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
+    if (!user) return;
+
     const fetchPosts = async () => {
       try {
         const res = await api.get('/posts?_author=true&_comments=true&_reactions=true', {
-          headers: user ? {
+          headers: {
             Authorization: `Bearer ${user.token}`
-          } : {}
+          }
         });
         setPosts(res.data);
       } catch (err) {
@@ -27,29 +30,24 @@ export default function Home() {
     fetchPosts();
   }, [user]);
 
-  
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setShowScrollTop(true);
-      } else {
-        setShowScrollTop(false);
-      }
+      setShowScrollTop(window.scrollY > 300);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  
   const handleScrollTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-
   const handleViewMore = () => {
     setVisibleCount((prev) => prev + 8);
   };
+
+  if (!user) return <LandingPage />;
 
   return (
     <div className="container mt-4">

@@ -11,8 +11,8 @@ export default function Navbar() {
 
   const handleLogout = () => {
     logout();
-    navigate('/login');
-    setIsExpanded(false); // lukker meny ved logout
+    navigate('/');
+    setIsExpanded(false);
   };
 
   const toggleMenu = () => {
@@ -20,7 +20,7 @@ export default function Navbar() {
   };
 
   const handleNavLinkClick = () => {
-    setIsExpanded(false); // lukker meny etter klikk
+    setIsExpanded(false);
   };
 
   return (
