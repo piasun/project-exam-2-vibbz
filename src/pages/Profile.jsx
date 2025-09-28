@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { api } from '../utils/api';
 import { useAuth } from '../features/auth/AuthContext';
-import defaultAvatar from '../assets/default-avatar.png'; // Plasser bildet i assets
+import defaultAvatar from '../assets/default-avatar.png';
 
 export default function Profile() {
   const { name } = useParams();
