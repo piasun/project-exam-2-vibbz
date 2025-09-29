@@ -64,7 +64,7 @@ export default function Home() {
 
       {visibleCount < posts.length && (
         <div className="text-center mb-4">
-          <button className="btn btn-outline-primary" onClick={handleViewMore}>
+          <button className="btn btn-primary" onClick={handleViewMore}>
             View More
           </button>
         </div>

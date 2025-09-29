@@ -15,7 +15,7 @@ export default function LandingPage() {
       <p>Check out how your feed could look:</p>
 
       <div className="row justify-content-center">
-        {[1, 2, 3].map((i) => (
+        {[1, 2, 3, 4, 5, 6].map((i) => (
           <div key={i} className="col-md-4 mb-3">
             <div className="card h-100">
               <img
