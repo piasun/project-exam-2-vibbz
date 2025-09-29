@@ -1,5 +1,11 @@
 # Vibbz 🎉
 
+# Brief
+
+An existing Social Media company has approached you to create a brand new front end for their application. While they have a list of required features, the design and user experience has not been specified. Working with the official API documentation, plan, design and build a modern front end social media application.
+
+---
+
 Vibbz is a vibrant and responsive social media front-end app built with React and Vite. It connects to the [Noroff Social API](https://nf-api.onrender.com/api/v1/social/) and allows users to interact through posts, comments, reactions, and profile features.
 
 ---
@@ -47,20 +53,6 @@ npm run dev
 ## 4. Open in your browser
 
 Usually at: http://localhost:5173
-
-# 🧭 Project Links
-
-Resource:
-
-- Gantt Chart: https://docs.google.com/spreadsheets/d/1xP5131VouLCMgOIcOLgEUD8rKEbLIBEYk5gbKwGNKQQ/edit?usp=sharing
-- Design Prototype Mobile: https://www.figma.com/proto/RATakuR6ImJ6PnZBPshRfg/PE2_Vibbz?node-id=11-166&p=f&t=NDxbETm2u3JTCtdz-1&scaling=scale-down&content-scaling=fixed&page-id=3%3A6&starting-point-node-id=4%3A111&show-proto-sidebar=1
-- Design Prototype Desktop: https://www.figma.com/proto/RATakuR6ImJ6PnZBPshRfg/PE2_Vibbz?node-id=8-654&p=f&t=t0kkNKi6FBzKRdOj-1&scaling=min-zoom&content-scaling=fixed&page-id=3%3A7&starting-point-node-id=8%3A654
-- Style Guide: https://www.figma.com/design/RATakuR6ImJ6PnZBPshRfg/PE2_Vibbz?node-id=0-1&t=04SHh8qjV7RQMEDf-1
-- Kanban Board: https://github.com/users/piasun/projects/2
-- Repository: https://github.com/piasun/project-exam-2-vibbz
-- Hosted Demo: https://vibbz.netlify.app/
-
-⚠️ All final changes are merged into main branch
 
 # 🧪 Testing Instructions
 
