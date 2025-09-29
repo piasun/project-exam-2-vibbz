@@ -31,7 +31,7 @@ export default function CreatePost() {
         <input className="form-control mb-2" placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} required />
         <textarea className="form-control mb-2" placeholder="Body" value={body} onChange={e => setBody(e.target.value)} required />
         <input className="form-control mb-2" placeholder="Media URL" value={media} onChange={e => setMedia(e.target.value)} />
-        <button className="btn btn-success">Post</button>
+        <button className="btn btn-primary">Post</button>
       </form>
       {(title || body || media) && (
         <>

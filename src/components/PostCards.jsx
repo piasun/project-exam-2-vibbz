@@ -54,7 +54,7 @@ export default function PostCard({ post }) {
           Author: <strong>{post.author?.name}</strong>
         </p>
 
-        <Link to={`/posts/${post.id}`} className="btn btn-outline-primary btn-sm me-2">
+        <Link to={`/posts/${post.id}`} className="btn btn-secondary btn-sm me-2">
           View Post
         </Link>
 

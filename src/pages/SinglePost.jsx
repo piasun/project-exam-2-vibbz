@@ -44,7 +44,7 @@ export default function SinglePost() {
   return (
     <div className="container mt-4">
       <h2>{post.title}</h2>
-      <p className="text-muted">By: {post.author?.name}</p>
+      <p>By: {post.author?.name}</p>
       {post.media && (
         <img
           src={post.media}
@@ -64,7 +64,7 @@ export default function SinglePost() {
           ))}
         </ul>
       ) : (
-        <p className="text-muted">No comments yet</p>
+        <p>No comments yet</p>
       )}
 
       {user && <CommentForm postId={post.id} onNewComment={addComment} />}

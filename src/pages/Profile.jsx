@@ -131,7 +131,7 @@ export default function Profile() {
             value={bannerUrl}
             onChange={(e) => setBannerUrl(e.target.value)}
           />
-          <button className="btn btn-success btn-sm">Update Profile</button>
+          <button className="btn btn-primary btn-sm">Update Profile</button>
           {message && <p className="mt-2 text-muted">{message}</p>}
         </form>
       )}

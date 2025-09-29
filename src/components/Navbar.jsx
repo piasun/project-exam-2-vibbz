@@ -1,7 +1,7 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../features/auth/AuthContext';
 import { useState } from 'react';
-import Logo from './Logo';
+import logo  from '../assets/logo_dark.svg';
 import defaultAvatar from '../assets/default-avatar.png';
 
 export default function Navbar() {
@@ -26,8 +26,7 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark navbar-custom px-3">
       <Link className="navbar-brand d-flex align-items-center gap-2" to="/">
-        <Logo size={32} />
-        <span className="fw-bold">Vibbz</span>
+        <img src={logo} alt="Vibbz logo" width="100" height="50" />
       </Link>
 
       <button
@@ -43,19 +42,25 @@ export default function Navbar() {
 
       <div className={`collapse navbar-collapse position-relative ${isExpanded ? 'show' : ''}`} id="navbarNav">
         <ul className="navbar-nav me-auto">
-          <li className="nav-item">
-            <NavLink to="/" className="nav-link" onClick={handleNavLinkClick}>Home</NavLink>
-          </li>
+          
           {user && (
+            <>
             <li className="nav-item">
+            <NavLink to="/" className="nav-link" onClick={handleNavLinkClick}>Home</NavLink>
+            </li>
+             <li className="nav-item">
               <NavLink to="/posts/create" className="nav-link" onClick={handleNavLinkClick}>Create Post</NavLink>
             </li>
+          </>
           )}
         </ul>
 
         <ul className="navbar-nav ms-auto">
           {!user ? (
             <>
+              <li className="nav-item">
+              <NavLink to="/" className="nav-link" onClick={handleNavLinkClick}>Home</NavLink>
+              </li>
               <li className="nav-item">
                 <NavLink to="/login" className="nav-link" onClick={handleNavLinkClick}>Login</NavLink>
               </li>
