@@ -14,6 +14,7 @@ export default function App() {
   return (
     <>
     <Navbar />
+    <main>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
@@ -24,6 +25,7 @@ export default function App() {
       <Route path="/posts/:id/edit" element={<EditPost />} />
       <Route path="/profiles" element={<Profiles />} />
     </Routes>
+    </main>
     <Footer />
     </>
   );

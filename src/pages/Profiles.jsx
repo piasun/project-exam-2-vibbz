@@ -16,7 +16,7 @@ export default function Profiles() {
     visibleCount,
     handleScrollTop,
     handleViewMore,
-  } = useScrollAndViewMore(12, 8); // start med 12, last 8 til hver gang
+  } = useScrollAndViewMore(12, 8);
 
   useEffect(() => {
     const fetchProfiles = async () => {
