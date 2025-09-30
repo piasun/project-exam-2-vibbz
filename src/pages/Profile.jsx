@@ -53,11 +53,14 @@ export default function Profile() {
   try {
     const action = profile.isFollowing ? 'unfollow' : 'follow';
 
-    await api.put(`/profiles/${profile.name}/${action}`, null, {
-     headers: {
-      Authorization: `Bearer ${user.token}`
+    await api({
+      method: "put",
+      url: `/profiles/${profile.name}/${action}`,
+      headers: {
+        Authorization: `Bearer ${user.token}`,
       },
     });
+
 
     setProfile((prev) => ({
       ...prev,

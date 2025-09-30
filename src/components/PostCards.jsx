@@ -51,7 +51,10 @@ export default function PostCard({ post }) {
         <p className="card-text text-truncate">{post.body}</p>
 
         <p className="text-muted small">
-          Author: <strong>{post.author?.name}</strong>
+          Author:{' '}
+          <Link to={`/profiles/${post.author?.name}`}>
+            <strong>{post.author?.name}</strong>
+          </Link>
         </p>
 
         <Link to={`/posts/${post.id}`} className="btn btn-secondary btn-sm me-2">

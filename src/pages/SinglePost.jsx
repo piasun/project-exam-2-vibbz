@@ -42,7 +42,7 @@ export default function SinglePost() {
           Authorization: `Bearer ${user.token}`,
         },
       });
-      navigate('/'); // Redirect to home after delete
+      navigate(`/profiles/${user.name}`);
     } catch (err) {
       alert('Failed to delete post');
     }
@@ -99,8 +99,6 @@ export default function SinglePost() {
     </div>
   );
 }
-
-// 🔽
 
 function CommentForm({ postId, onNewComment }) {
   const { user } = useAuth();
