@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Footer from "./components/Footer";
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -23,6 +24,7 @@ export default function App() {
       <Route path="/posts/:id/edit" element={<EditPost />} />
       <Route path="/profiles" element={<Profiles />} />
     </Routes>
+    <Footer />
     </>
   );
 }
