@@ -51,6 +51,9 @@ export default function Navbar() {
              <li className="nav-item">
               <NavLink to="/posts/create" className="nav-link" onClick={handleNavLinkClick}>Create Post</NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink to="/profiles" className="nav-link" onClick={handleNavLinkClick}>Profiles</NavLink>
+            </li>
           </>
           )}
         </ul>

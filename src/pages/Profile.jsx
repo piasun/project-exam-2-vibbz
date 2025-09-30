@@ -26,7 +26,10 @@ export default function Profile() {
               : {},
           }
         );
-        setProfile(res.data);
+        setProfile({
+        ...res.data,
+        isFollowing: res.data.followers?.some(f => f.name === user.name),
+      });
       } catch (err) {
         console.error('Could not load profile', err);
         setError('Could not load profile');
@@ -38,19 +41,34 @@ export default function Profile() {
     }
   }, [name, user]);
 
-  const toggleFollow = async () => {
-    try {
-      const action = profile.isFollowing ? 'unfollow' : 'follow';
-      await api.put(`/profiles/${name}/${action}`, {}, {
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      });
-      setProfile({ ...profile, isFollowing: !profile.isFollowing });
-    } catch {
-      alert('Could not follow/unfollow');
-    }
-  };
+ const toggleFollow = async () => {
+  if (user.name === profile.name) {
+    alert("You can't follow yourself!");
+    return;
+  }
+
+  console.log("Trying to follow:", profile.name);
+  console.log("User token:", user.token);
+
+  try {
+    const action = profile.isFollowing ? 'unfollow' : 'follow';
+
+    await api.put(`/profiles/${profile.name}/${action}`, null, {
+     headers: {
+      Authorization: `Bearer ${user.token}`
+      },
+    });
+
+    setProfile((prev) => ({
+      ...prev,
+      isFollowing: !prev.isFollowing,
+    }));
+  } catch (error) {
+    console.error("Follow/unfollow error:", error);
+    alert('Could not follow/unfollow');
+  }
+};
+
 
   const handleUpdate = async (e) => {
     e.preventDefault();
@@ -163,7 +181,8 @@ export default function Profile() {
     </div>
   </div>
 ) : (
-  <p className="text-muted mt-5">No posts yet</p>
+  <p className="mt-5">No posts yet</p>
+  
 )}
 
     </div>
