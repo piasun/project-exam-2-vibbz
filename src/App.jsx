@@ -6,6 +6,8 @@ import Register from './pages/Register';
 import Profile from './pages/Profile';
 import SinglePost from './pages/SinglePost';
 import CreatePost from './pages/CreatePost';
+import EditPost from './components/EditPost';
+import Profiles from './pages/Profiles';
 
 export default function App() {
   return (
@@ -18,6 +20,8 @@ export default function App() {
       <Route path="/profiles/:name" element={<Profile />} />
       <Route path="/posts/:id" element={<SinglePost />} />
       <Route path="/posts/create" element={<CreatePost />} />
+      <Route path="/posts/:id/edit" element={<EditPost />} />
+      <Route path="/profiles" element={<Profiles />} />
     </Routes>
     </>
   );

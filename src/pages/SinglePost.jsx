@@ -1,10 +1,11 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { api } from '../utils/api';
 import { useAuth } from '../features/auth/AuthContext';
 
 export default function SinglePost() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const { user } = useAuth();
   const [post, setPost] = useState(null);
   const [error, setError] = useState('');
@@ -31,6 +32,22 @@ export default function SinglePost() {
     }
   }, [id, user]);
 
+  const handleDelete = async () => {
+    const confirmDelete = window.confirm('Are you sure you want to delete this post?');
+    if (!confirmDelete) return;
+
+    try {
+      await api.delete(`/posts/${id}`, {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
+      navigate('/'); // Redirect to home after delete
+    } catch (err) {
+      alert('Failed to delete post');
+    }
+  };
+
   const addComment = (newComment) => {
     setPost((prev) => ({
       ...prev,
@@ -53,6 +70,17 @@ export default function SinglePost() {
         />
       )}
       <p>{post.body}</p>
+
+      {user?.name === post.author?.name && (
+        <div className="mt-3 d-flex gap-2">
+          <Link to={`/posts/${post.id}/edit`} className="btn btn-warning btn-sm">
+            Edit Post
+          </Link>
+          <button className="btn btn-danger btn-sm" onClick={handleDelete}>
+            Delete Post
+          </button>
+        </div>
+      )}
 
       <hr />
 
