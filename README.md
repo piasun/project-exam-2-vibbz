@@ -1,6 +1,6 @@
 # Vibbz 🎉
 
-[![Se Vibbz Demo](./assets/frontpage_Vibbz.png)](https://vibbz.netlify.app/)
+[![Se Vibbz Demo](src/assets/frontpage_Vibbz.png)](https://vibbz.netlify.app/)
 
 # Brief
 
