@@ -22,7 +22,10 @@ cd project-exam-2-vibbz
 # Install dependencies
 npm install
 
-# Run the deve
+# Run the development server
+npm run dev
+
+```
 
 ---
 
@@ -32,9 +35,10 @@ Before running the project, create a .env file in the root directory based on .e
 
 The file should include:
 
+```bash
 VITE_API_BASE=https://nf-api.onrender.com/api/v1/social
 VITE_NOROFF_API_KEY=your_api_key_here
-
+```
 
 ⚠️ Do not commit your .env file. It should be excluded via .gitignore.
 
@@ -64,6 +68,8 @@ VITE_NOROFF_API_KEY=your_api_key_here
 ---
 
 🧱 Folder Structure
+
+```bash
 src/
 ├── assets/
 ├── components/
@@ -72,14 +78,17 @@ src/
 ├── pages/
 ├── styles/
 └── utils/
+```
 
 ---
 
 ⚙️ Scripts
-Command	Description
-npm run dev	Starts the development server
-npm run build	Builds the app for production
-npm run preview	Previews the production build
+
+| Command           | Description                   |
+| ----------------- | ----------------------------- |
+| `npm run dev`     | Starts the development server |
+| `npm run build`   | Builds the app for production |
+| `npm run preview` | Previews the production build |
 
 All scripts are tested on a fresh clone to ensure smooth setup.
 
@@ -89,11 +98,13 @@ All scripts are tested on a fresh clone to ensure smooth setup.
 
 Ensure the following are excluded:
 
+```bash
 node_modules/
 dist/
 build/
 .env*
 .DS_Store
+```
 
 ---
 
@@ -116,4 +127,3 @@ Noroff Front-End Development Program
 Noroff Social API
 Instructor & peer feedback
 User testing participants who provided design insights
-```
