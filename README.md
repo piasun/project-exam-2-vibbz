@@ -123,7 +123,7 @@ Developer: Pia Sun
 
 🙏 Acknowledgments
 
-Noroff Front-End Development Program
-Noroff Social API
-Instructor & peer feedback
-User testing participants who provided design insights
+- Noroff Front-End Development Program
+- Noroff Social API
+- Instructor & peer feedback
+- User testing participants who provided design insights
