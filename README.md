@@ -1,27 +1,42 @@
 # Vibbz 🎉
 
-[![Se Vibbz Demo](src/assets/frontpage_Vibbz.png)](https://vibbz.netlify.app/)
+# Description
 
-# Brief
+**Vibbz** is a modern, accessible, and responsive social media application developed as part of the **Noroff Front-End Development Exam (Fall 2025)**.  
+The goal was to design and build a new, user-friendly front end for an existing Social Media API, with focus on **UI/UX**, **accessibility (WCAG)**, and **performance**.
 
-An existing Social Media company has approached you to create a brand new front end for their application. While they have a list of required features, the design and user experience has not been specified. Working with the official API documentation, plan, design and build a modern front end social media application.
-
----
-
-Vibbz is a vibrant and responsive social media front-end app built with React and Vite. It connects to the [Noroff Social API](https://nf-api.onrender.com/api/v1/social/) and allows users to interact through posts, comments, reactions, and profile features.
+Users can register, log in, view posts, react with emojis, comment, and manage their own profiles.  
+The design was created in **Figma** and tested by multiple users to gather insights for improving usability and visual consistency.
 
 ---
 
-# 🚀 Features
+## 🚀 Quick Start
 
-- ✅ User registration (with `@stud.noroff.no` email only)
-- ✅ Secure login and authentication flow
-- ✅ JWT token handling and route protection
-- ✅ View posts and post details
-- ✅ Comment on and react to posts (emojis)
-- ✅ View and edit user profile, avatar, and banner
-- ✅ Follow/unfollow other users
-- ✅ Create, update and delete own posts
+```bash
+# Clone the repository
+git clone https://github.com/piasun/project-exam-2-vibbz.git
+
+# Navigate into the project folder
+cd project-exam-2-vibbz
+
+# Install dependencies
+npm install
+
+# Run the deve
+
+---
+
+🔧 Environment Variables
+
+Before running the project, create a .env file in the root directory based on .env.example.
+
+The file should include:
+
+VITE_API_BASE=https://nf-api.onrender.com/api/v1/social
+VITE_NOROFF_API_KEY=your_api_key_here
+
+
+⚠️ Do not commit your .env file. It should be excluded via .gitignore.
 
 ---
 
@@ -37,35 +52,68 @@ Vibbz is a vibrant and responsive social media front-end app built with React an
 
 ---
 
-# 💻 Getting Started
+# 🚀 Features
 
-## 1. Clone the repo
+- ✅ User authentication (register/login restricted to @stud.noroff.no emails)
+- ✅ Protected routes and dynamic UI based on login state
+- ✅ View, create, and react to posts (emojis and comments)
+- ✅ Profile management (view, edit, and follow/unfollow users)
+- ✅ Responsive and accessible UI (WCAG compliant)
+- ✅ Error handling and API integration using Axios
 
-git clone https://github.com/YOUR_USERNAME/vibbz.git
-cd vibbz
+---
 
-## 2. Install dependencies
+🧱 Folder Structure
+src/
+├── assets/
+├── components/
+├── context/
+├── hooks/
+├── pages/
+├── styles/
+└── utils/
 
-Install dependencies
+---
 
-## 3. Start the development server
+⚙️ Scripts
+Command	Description
+npm run dev	Starts the development server
+npm run build	Builds the app for production
+npm run preview	Previews the production build
 
-npm run dev
+All scripts are tested on a fresh clone to ensure smooth setup.
 
-## 4. Open in your browser
+---
 
-Usually at: http://localhost:5173
+🧹 .gitignore Checklist
 
-# 🧪 Testing Instructions
+Ensure the following are excluded:
 
-To test the app:
+node_modules/
+dist/
+build/
+.env*
+.DS_Store
 
-1. Register with a valid @stud.noroff.no email
-2. Create a post and verify it appears on Home
-3. Add emoji reaction and comment
-4. Visit your profile and update avatar/banner
-5. Try private routes without login (should redirect to login page)
+---
 
-# 📄 License
+🌐 Live Demo
+[![Se Vibbz Demo](src/assets/frontpage_Vibbz.png)](https://vibbz.netlify.app/)
+👉[Vibbz on Netlify](https://vibbz.netlify.app/)
 
-This project is for educational purposes only. No license required.
+---
+
+📬 Contact
+
+Developer: Pia Sun
+📧 [GitHub Profile](https://github.com/piasun)
+
+---
+
+🙏 Acknowledgments
+
+Noroff Front-End Development Program
+Noroff Social API
+Instructor & peer feedback
+User testing participants who provided design insights
+```
